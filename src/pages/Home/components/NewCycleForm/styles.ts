@@ -35,6 +35,6 @@ flex: 1;
 }
 `;
 
-export const MinutsAmountInput = styled(BaseInput)`
+export const MinutesAmountInput = styled(BaseInput)`
 width: 4rem;
 `;

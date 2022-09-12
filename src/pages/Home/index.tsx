@@ -1,7 +1,7 @@
 import { HandPalm, Play } from 'phosphor-react'
 import { FormProvider, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import zod from 'zod'
+import * as zod from 'zod'
 
 import {
   HomeContainer,
@@ -15,7 +15,7 @@ import { CyclesContext } from '../../contexts/CyclesContext'
 
 const newCycleFormValidationSchema = zod.object({
   task: zod.string().min(1, 'Informe a tarefa'),
-  minutsAmount: zod
+  minutesAmount: zod
     .number()
     .min(5, 'Limite mínimo de 5 minutos')
     .max(60, 'Limite máximo de 60 minutos')
@@ -31,7 +31,7 @@ export function Home() {
     resolver: zodResolver(newCycleFormValidationSchema),
     defaultValues: {
       task: '',
-      minutsAmount: 0
+      minutesAmount: 0
     }
   })
 
@@ -47,7 +47,7 @@ export function Home() {
 
   return (
     <HomeContainer>
-      <form action="" onSubmit={handleSubmit(handleCreateNewCycle)}>
+      <form onSubmit={handleSubmit(handleCreateNewCycle)}>
         <FormProvider {...newCycleForm}>
           <NewCycleForm />
         </FormProvider>

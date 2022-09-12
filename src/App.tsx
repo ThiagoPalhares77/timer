@@ -13,8 +13,9 @@ export function App() {
         <CyclesContextProvider>
           <Router />
         </CyclesContextProvider>
-        <GlobalStyle />
       </BrowserRouter>
+
+      <GlobalStyle />
     </ThemeProvider>
   )
 }
